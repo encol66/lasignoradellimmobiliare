@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contatti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Contattaci</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="immobili.html">Immobili</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <form name="contatto" method="POST" data-netlify="true">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" required />
+
+      <label for="messaggio">Messaggio:</label>
+      <textarea name="messaggio" rows="5" required></textarea>
+
+      <button type="submit">Invia</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 La Signora dell'Immobiliare</p>
+  </footer>
+</body>
+</html>
