@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti - La Signora dell'Immobiliare</title>
+  <title>Contattaci - La Signora dell'Immobiliare</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>La Signora dell'Immobiliare</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -20,9 +19,11 @@
     </div>
   </header>
 
-  <main class="container">
-    <h2>Contattaci</h2>
-    <form name="contact" method="POST" data-netlify="true">
+  <main class="container" style="text-align: center;">
+    <h2>Contattaci subito!</h2>
+    <p style="font-style: italic; font-size: 0.9rem; margin-top: -10px;">La prossima occasione potrebbe essere la tua!</p>
+
+    <form name="contact" method="POST" data-netlify="true" style="max-width: 600px; margin: 2rem auto; text-align: left;">
       <input type="hidden" name="form-name" value="contact">
 
       <label for="nome">Nome:</label>
@@ -50,8 +51,8 @@
         </select>
       </div>
 
-      <p id="disclaimer-valutazione" class="hidden">Specificare il tipo di immobile, il comune, e la metratura.</p>
-      <p id="disclaimer-altro" class="hidden">Specificare nel messaggio il tipo di richiesta.</p>
+      <p id="disclaimer-valutazione" class="hidden" style="font-style: italic; font-size: 0.9rem;">Specificare il tipo di immobile, il comune, e la metratura.</p>
+      <p id="disclaimer-altro" class="hidden" style="font-style: italic; font-size: 0.9rem;">Specificare nel messaggio il tipo di richiesta.</p>
 
       <label for="messaggio">Messaggio:</label>
       <textarea id="messaggio" name="messaggio" required></textarea>
@@ -69,19 +70,28 @@
   <script>
     function aggiornaForm() {
       const tipo = document.getElementById("tipo").value;
+      const immobileSelect = document.getElementById("immobile-select");
+      const disclaimerValutazione = document.getElementById("disclaimer-valutazione");
+      const disclaimerAltro = document.getElementById("disclaimer-altro");
 
-      document.getElementById("immobile-select").classList.add("hidden");
-      document.getElementById("disclaimer-valutazione").classList.add("hidden");
-      document.getElementById("disclaimer-altro").classList.add("hidden");
+      immobileSelect.classList.add("hidden");
+      disclaimerValutazione.classList.add("hidden");
+      disclaimerAltro.classList.add("hidden");
 
       if (tipo === "informazioni") {
-        document.getElementById("immobile-select").classList.remove("hidden");
+        immobileSelect.classList.remove("hidden");
       } else if (tipo === "valutazione") {
-        document.getElementById("disclaimer-valutazione").classList.remove("hidden");
+        disclaimerValutazione.classList.remove("hidden");
       } else if (tipo === "altro") {
-        document.getElementById("disclaimer-altro").classList.remove("hidden");
+        disclaimerAltro.classList.remove("hidden");
       }
     }
   </script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </body>
 </html>
