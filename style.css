@@ -24,9 +24,10 @@ header {
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+.logo-header {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -65,7 +66,7 @@ main {
   font-size: 0.9rem;
 }
 
-/* === Cards (Home/Immobili) === */
+/* === Cards === */
 .vetrina {
   display: flex;
   flex-wrap: wrap;
@@ -154,13 +155,17 @@ footer {
   margin-top: 2rem;
 }
 
-/* === Responsive Design === */
+/* === Responsive === */
 @media (max-width: 768px) {
+  .logo-header {
+    height: 60px;
+  }
+
   .vetrina {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .card {
     width: 100%;
     max-width: 350px;
