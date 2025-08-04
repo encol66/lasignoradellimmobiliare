@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contatti</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - La Signora dell'Immobiliare</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    label { display: block; margin-top: 1em; }
+    textarea { width: 100%; height: 100px; }
+    select, input[type="text"], input[type="email"] { width: 100%; padding: 0.5em; }
+    .hidden { display: none; color: #333; font-style: italic; margin-top: 0.5em; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Contattaci</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="immobili.html">Immobili</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
-  </header>
+  <h1>Contattaci</h1>
+  <form name="contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="contact">
 
-  <main>
-    <form name="contatto" method="POST" data-netlify="true">
-      <label for="nome">Nome:</label>
-      <input type="text" name="nome" required />
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="messaggio">Messaggio:</label>
-      <textarea name="messaggio" rows="5" required></textarea>
+    <label for="tipo">Tipo di richiesta:</label>
+    <select id="tipo" name="tipo" required onchange="aggiornaForm()">
+      <option value="">-- Seleziona --</option>
+      <option value="informazioni">Informazioni su un immobile</option>
+      <option value="valutazione">Valutazione immobile</option>
+      <option value="appuntamento">Appuntamento in Agenzia</option>
+      <option value="altro">Altro</option>
+    </select>
 
-      <button type="submit">Invia</button>
-    </form>
-  </main>
+    <div id="immobile-select" class="hidden">
+      <label for="immobile">Seleziona immobile:</label>
+      <select id="immobile" name="immobile">
+        <option value="">-- Seleziona immobile --</option>
+        <option value="Bilocale in centro">Bilocale in centro</option>
+        <option value="Villa con giardino">Villa con giardino</option>
+        <option value="Attico panoramico">Attico panoramico</option>
+        <!-- Aggiungi altri immobili qui -->
+      </select>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 La Signora dell'Immobiliare</p>
-  </footer>
+    <p id="disclaimer-valutazione" class="hidden">Specificare il tipo di immobile, il comune, e la metratura.</p>
+    <p id="disclaimer-altro" class="hidden">Specificare nel messaggio il tipo di richiesta.</p>
+
+    <label for="messaggio">Messaggio:</label>
+    <textarea id="messaggio" name="messaggio" required></textarea>
+
+    <button type="submit">Invia richiesta</button>
+  </form>
+
+  <script>
+    function aggiornaForm() {
+      const tipo = document.getElementById("tipo").value;
+
+      document.getElementById("immobile-select").classList.add("hidden");
+      document.getElementById("disclaimer-valutazione").classList.add("hidden");
+      document.getElementById("disclaimer-altro").classList.add("hidden");
+
+      if (tipo === "informazioni") {
+        document.getElementById("immobile-select").classList.remove("hidden");
+      } else if (tipo === "valutazione") {
+        document.getElementById("disclaimer-valutazione").classList.remove("hidden");
+      } else if (tipo === "altro") {
+        document.getElementById("disclaimer-altro").classList.remove("hidden");
+      }
+    }
+  </script>
 </body>
 </html>
