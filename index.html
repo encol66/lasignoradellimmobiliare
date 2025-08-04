@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Signora dell'Immobiliare</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>La Signora dell'Immobiliare</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="immobili.html">Immobili</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
+    <div class="container">
+      <h1>La Signora dell'Immobiliare</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="immobili.html">Immobili</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>Benvenuti</h2>
-      <p>La tua casa ideale ti aspetta. Scopri le nostre proposte!</p>
+  <main class="container">
+    <section>
+      <h2 class="section-title">Benvenuti</h2>
+      <p class="section-subtitle">La tua casa ideale ti aspetta. Scopri le nostre proposte!</p>
     </section>
 
-    <section class="vetrina">
-      <h3>Immobili in evidenza</h3>
-      <div class="card">
-        <img src="img/casa1.jpg" alt="Casa moderna" />
-        <p>Villetta a schiera - 3 locali - 210.000€</p>
-      </div>
-      <div class="card">
-        <img src="img/casa2.jpg" alt="Appartamento" />
-        <p>Appartamento in centro - 2 locali - 140.000€</p>
+    <section>
+      <h3 class="section-title">Immobili in evidenza</h3>
+      <div class="vetrina">
+        <div class="card">
+          <img src="img/casa1.jpg" alt="Casa moderna">
+          <h4>Villetta a schiera</h4>
+          <p>3 locali - 210.000€</p>
+        </div>
+        <div class="card">
+          <img src="img/casa2.jpg" alt="Appartamento">
+          <h4>Appartamento in centro</h4>
+          <p>2 locali - 140.000€</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 La Signora dell'Immobiliare</p>
+    <div class="container">
+      <p>&copy; 2025 La Signora dell'Immobiliare</p>
+    </div>
   </footer>
 </body>
 </html>

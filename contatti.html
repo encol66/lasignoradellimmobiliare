@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contattaci - La Signora dell'Immobiliare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="container">
+      <h1>La Signora dell'Immobiliare</h1>
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="immobili.html">Immobili</a></li>
-          <li><a href="contatti.html" class="active">Contatti</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="immobili.html">Immobili</a>
+        <a href="contatti.html" class="active">Contatti</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" style="text-align: center;">
-    <h2>Contattaci subito!</h2>
-    <p style="font-style: italic; font-size: 0.9rem; margin-top: -10px;">La prossima occasione potrebbe essere la tua!</p>
+  <main class="container">
+    <h2 class="section-title">Contattaci subito!</h2>
+    <p class="section-subtitle">La prossima occasione potrebbe essere la tua!</p>
 
-    <form name="contact" method="POST" data-netlify="true" style="max-width: 600px; margin: 2rem auto; text-align: left;">
+    <form name="contact" method="POST" data-netlify="true" class="contact-form">
       <input type="hidden" name="form-name" value="contact">
 
       <label for="nome">Nome:</label>
@@ -51,8 +51,8 @@
         </select>
       </div>
 
-      <p id="disclaimer-valutazione" class="hidden" style="font-style: italic; font-size: 0.9rem;">Specificare il tipo di immobile, il comune, e la metratura.</p>
-      <p id="disclaimer-altro" class="hidden" style="font-style: italic; font-size: 0.9rem;">Specificare nel messaggio il tipo di richiesta.</p>
+      <p id="disclaimer-valutazione" class="hidden">Specificare il tipo di immobile, il comune, e la metratura.</p>
+      <p id="disclaimer-altro" class="hidden">Specificare nel messaggio il tipo di richiesta.</p>
 
       <label for="messaggio">Messaggio:</label>
       <textarea id="messaggio" name="messaggio" required></textarea>
@@ -87,11 +87,5 @@
       }
     }
   </script>
-
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
 </body>
 </html>
